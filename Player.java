@@ -1,9 +1,8 @@
 public class Player {
     private Inventory inventory;
-    private int money;
+    private int money = 100;
     private int level = 0;
     private double experience = 0.0;
-    private int productCount;
 
     public Player () {
         this.inventory = new Inventory();
@@ -15,6 +14,22 @@ public class Player {
         this.experience += 5;
     }
 
+    public void addMoney(int income) {
+        this.money += income;
+    }
+
+    public void spendMoney(int price) {
+        this.money -= price;
+    }
+
+    public void addExperience(double gainedExperience) {
+        this.experience += gainedExperience;
+    }
+
+    public void levelUp() {
+        this.level++;
+    }
+
     public int getMoney() {
         return this.money;
     }
@@ -23,21 +38,17 @@ public class Player {
         return this.level;
     }
 
-    public void spendMoney(int price) {
-        this.money -= price;
-    }
-
-    public void addInventoryProduct(Turnip turnip) {
-        inventory.storeProduct(turnip);
-    }
-
     public double getExperience() {
         return this.experience;
     }
 
-    public void levelUp() {
-        this.level++;
-        this.experience -= 100;
+    public Inventory getInventory() {
+        return this.inventory;
     }
 
+    public void resetPlayer() {
+        this.money = 100;
+        this.experience = 0.0;
+        this.level = 0;
+    }
 }

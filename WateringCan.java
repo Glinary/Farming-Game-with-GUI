@@ -1,12 +1,14 @@
+
 public class WateringCan {
     
+
     public WateringCan() {
 
     }
 
-    public boolean waterPlant(Tile tile, Turnip turnip) {
+    public boolean waterTile(Tile tile) {
         if(tile.getPlowStatus() == true) {
-            turnip.setIsWatered(true);
+            tile.setIsWatered(true);
             return true;
         } else {
             System.out.println("The tile is not plowed.");
