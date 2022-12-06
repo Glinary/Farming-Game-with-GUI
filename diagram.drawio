@@ -1,708 +1,534 @@
 <mxfile host="65bd71144e">
-    <diagram id="CFCoZDq-MpPilK7JPZOa" name="Page-1">
-        <mxGraphModel dx="740" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <diagram id="DcCdS9mNnW-fduspzkat" name="Glee's version">
+        <mxGraphModel dx="2995" dy="1867" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="5" value="Player" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="30" width="250" height="340" as="geometry">
+                <mxCell id="2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="5" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="735" y="100"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="0..50" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2" vertex="1" connectable="0">
+                    <mxGeometry x="-0.9063" y="1" relative="1" as="geometry">
+                        <mxPoint x="32" y="-17" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="stores" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2" vertex="1" connectable="0">
+                    <mxGeometry x="0.7026" y="-2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="Tile" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="466" width="250" height="330" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="6" value="- inventory : Inventory&#10;- money : int = 100&#10;- level : int = 0&#10;- experience : double = 0.0&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5" vertex="1">
-                    <mxGeometry y="26" width="250" height="104" as="geometry"/>
+                <mxCell id="6" value="- isPlowed : boolean&#10;- hasRock : boolean&#10;- hasCrop : boolean&#10;- crop : Crop" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5" vertex="1">
+                    <mxGeometry y="26" width="250" height="74" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="5" vertex="1">
-                    <mxGeometry y="130" width="250" height="8" as="geometry"/>
+                    <mxGeometry y="100" width="250" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="+ Player ()&#10;&#10;+ harvestCrop (tile : Tile) : void&#10;+ addMoney () : void&#10;+ spendMoney (price : int) : void&#10;+ addExperience () : void&#10;+ levelUp () : void&#10;&#10;+ getMoney (income : int) : int&#10;+ getLevel () : int&#10;+ getExperience () : double&#10;+ getInventory () : Inventory  &#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5" vertex="1">
-                    <mxGeometry y="138" width="250" height="202" as="geometry"/>
+                <mxCell id="8" value="+ Tile ()&#10;&#10;+ getIsPlowed () : boolean&#10;+ getHasRock () : boolean&#10;+ getHasCrop () : boolean&#10;+ setIsPlowed (status : boolean) : void&#10;+ setHasRock (status : boolean) :void&#10;+ setHasCrop (status : boolean) : void&#10;+ resetStats () : void&#10;+ getCrop () : Crop&#10;+ createCrop (num : int) : void&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="5" vertex="1">
+                    <mxGeometry y="108" width="250" height="222" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="Farm" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="170" y="60" width="160" height="250" as="geometry">
+                <mxCell id="9" value="Player" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="-90" width="250" height="458" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="10" value="- tile : Tile&#10;- day : int = 1&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
-                    <mxGeometry y="26" width="160" height="84" as="geometry"/>
+                <mxCell id="10" value="- objectCoins : double = 100&#10;- level : int = 0&#10;- experience : double = 0&#10;- farmerType : String = &quot;Farmer&quot;&#10;- toolList : ArrayList&lt;Tool&gt;&#10;- bonusEarningsPerProduce : int = 0&#10;- seedCostReduction : int = 0&#10;- waterBonusLimitIncrease : int = 0&#10;- fertilizerBonusLimitIncrease : int = 0&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
+                    <mxGeometry y="26" width="250" height="144" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="9" vertex="1">
-                    <mxGeometry y="110" width="160" height="8" as="geometry"/>
+                    <mxGeometry y="170" width="250" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="+ Farm ()&#10;&#10;+ nextDay () : void&#10;+ getTile () : Tile&#10;+ reset () : void&#10;&#10;+ getDay () : int &#10;&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
-                    <mxGeometry y="118" width="160" height="132" as="geometry"/>
+                <mxCell id="12" value="+ Player ()&#10;&#10;+ increaseObjectCoins (num : double) : void&#10;+ increaseObjectCoins (num : double,&#10;                                      type : String)&#10;+ setLevel () : void&#10;+ increaseExperience (num : double) : void&#10;+ setFarmerType (name : String) : void&#10;+ checkStatusBeforeNextDay () : void&#10;+ resetPlayerStats () : void&#10;+ plow () : void&#10;+ water () : void&#10;+ fertilize () : void&#10;+ pickaxe () : void&#10;+ shovel () : void&#10;+ harvest (tile : Tile) : void&#10;+ plantSeed (tile : Tile) : void&#10;+ displayPlayerInformation () : void&#10;+ plantSeed (tile : Tile) : void&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="9" vertex="1">
+                    <mxGeometry y="178" width="250" height="280" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="Plow" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="1220" y="590" width="160" height="216" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="14" value="&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="13" vertex="1">
-                    <mxGeometry y="26" width="160" height="34" as="geometry"/>
-                </mxCell>
-                <mxCell id="15" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="13" vertex="1">
-                    <mxGeometry y="60" width="160" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="16" value="+ Plow ()&#10;+ plowTile(tile : Tile) : void&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="13" vertex="1">
-                    <mxGeometry y="68" width="160" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="17" value="Tile" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="50" y="450" width="280" height="330" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="18" value="- isPlowed : boolean&#10;- isPlanted : boolean&#10;- turnip : Turnip&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="17" vertex="1">
-                    <mxGeometry y="26" width="280" height="104" as="geometry"/>
-                </mxCell>
-                <mxCell id="19" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="17" vertex="1">
-                    <mxGeometry y="130" width="280" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="20" value="+ Tile ()&#10;&#10;+ plantSeed (name : String, player : Player) : void&#10;+ harvestPlant () : void&#10;&#10;+ getTurnip () : Turnip&#10;+ getPlantStatus () : boolean&#10;+ setPlantStatus (status : boolean) : void&#10;+ getPlowStatus () : boolean&#10;+ setIsPlowed (isPlowed : boolean) : void&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="17" vertex="1">
-                    <mxGeometry y="138" width="280" height="192" as="geometry"/>
-                </mxCell>
-                <mxCell id="21" value="Turnip" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="470" y="450" width="260" height="330" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="22" value="- daysLeft : int = 2 &#10;- isWatered : boolean&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- sellingPrice : int = 6&#10;- waterCount : int = 0&#10;- minWaterRequirement : int = 1&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
-                    <mxGeometry y="26" width="260" height="134" as="geometry"/>
-                </mxCell>
-                <mxCell id="23" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="21" vertex="1">
-                    <mxGeometry y="160" width="260" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="24" value="+ Turnip ()&#10;&#10;+ addWaterCount () : void&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ setIsWatered (isWatered : boolean) : void&#10;+ getWaterCount () : void &#10;&#10;&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
-                    <mxGeometry y="168" width="260" height="162" as="geometry"/>
-                </mxCell>
-                <mxCell id="99NaP7L8j-EvRrVccQtR-32" value="Inventory" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="955" y="320" width="225" height="220" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="99NaP7L8j-EvRrVccQtR-33" value="- plow : Plow&#10;- wateringCan : WateringCan" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="99NaP7L8j-EvRrVccQtR-32" vertex="1">
-                    <mxGeometry y="26" width="225" height="84" as="geometry"/>
-                </mxCell>
-                <mxCell id="99NaP7L8j-EvRrVccQtR-34" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="99NaP7L8j-EvRrVccQtR-32" vertex="1">
-                    <mxGeometry y="110" width="225" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="99NaP7L8j-EvRrVccQtR-35" value="+ Inventory ()&#10;&#10;+ getPlow () : Plow&#10;+ getWateringCan () : WateringCan" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="99NaP7L8j-EvRrVccQtR-32" vertex="1">
-                    <mxGeometry y="118" width="225" height="82" as="geometry"/>
-                </mxCell>
-                <mxCell id="41" style="edgeStyle=none;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="13" target="20" edge="1">
+                <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.833;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="15" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1300" y="940"/>
-                            <mxPoint x="120" y="940"/>
-                        </Array>
-                        <mxPoint x="1300" y="840" as="sourcePoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="53" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="41" vertex="1" connectable="0">
-                    <mxGeometry x="-0.0348" y="-2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="46" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.668;entryY=1.016;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="99NaP7L8j-EvRrVccQtR-36" target="20" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="1078" y="840"/>
-                            <mxPoint x="238" y="840"/>
+                            <mxPoint x="970" y="580"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="52" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="46" vertex="1" connectable="0">
-                    <mxGeometry x="0.0558" y="4" relative="1" as="geometry">
+                <mxCell id="14" value="uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="13" vertex="1" connectable="0">
+                    <mxGeometry x="0.1391" y="1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="47" style="edgeStyle=none;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1.009;entryY=0.822;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="99NaP7L8j-EvRrVccQtR-36" target="24" edge="1">
+                <mxCell id="15" value="abstract&lt;br&gt;&lt;b&gt;&lt;i&gt;Tool&lt;/i&gt;&lt;/b&gt;" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="850" y="580" width="230" height="216" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="15" vertex="1">
+                    <mxGeometry y="40" width="230" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="+ Tool ()&#10;&#10;+ useTool () : void&#10;+ getCostFromUsage () : double&#10;+ getExperienceFromUsage () : double" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="15" vertex="1">
+                    <mxGeometry y="48" width="230" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Crop" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="290" width="300" height="610" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="- daysLeft : int&#10;- isWithered : boolean = false&#10;- isHarvestable : boolean = false&#10;- harvestYield : int&#10;- sellingPrice : int&#10;- timesCropWasWatered : int = 0&#10;- timesCropAddedFertilizer : int = 0&#10;- minWaterRequirement : int&#10;- bonusWaterMaximum : int&#10;- minFertilerRequirement : int&#10;- bonusFertilizerMaximum : int&#10;- cropType : String&#10;- experienceYield : double" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="19" vertex="1">
+                    <mxGeometry y="26" width="300" height="204" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="19" vertex="1">
+                    <mxGeometry y="230" width="300" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="+ Crop (cropType : String, daysLeft : int,&#10;            minWaterRequirement : int,&#10;            bonusWaterMaximum : int,&#10;            minFertilizerRequirement : int,&#10;            bonusFertilizerMaximum : int,&#10;            minimumYield : int, extraYield : int,&#10;            sellingPrice : int, experienceYield : double)&#10;+ addTimesCropWasWatered() : void&#10;+ addTimesCropAddedFertilizer() : void&#10;+ checkIfWithered() : void&#10;+ checkIfHarvestable() : void&#10;+ subtractDaysLeft() : void&#10;+ getDaysLeft() : int&#10;+ getHarvestYield() : int&#10;+ getSellingPrice() : int&#10;+ getTimesCropWasWatered() : int&#10;+ getTimesCropAddedFertilizer() : int&#10;+ getMinWaterRequirement() : int&#10;+ getBonusWaterMaximum() : int&#10;+ getMinFertilizerRequirement() : int&#10;+ getBonusFertilizerMaximum() : int&#10;+ getCropType() : int&#10;+ getExperienceYield() : double&#10;+ getIsWithered() : boolean&#10;+ getIsHarvestable() : int&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="19" vertex="1">
+                    <mxGeometry y="238" width="300" height="372" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Farm" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="-180" width="320" height="320" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="- player : Player&#10;- tileList : Tile[][]&#10;- farmLotRow : int = 10&#10;- farmLotColumn : int = 5&#10;- endGameConditionOne : boolean = false&#10;- endGameConditionTwo : boolean = false&#10;- endGameConditionThree : boolean = false&#10;- dayCount : int = 1&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="23" vertex="1">
+                    <mxGeometry y="26" width="320" height="124" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="23" vertex="1">
+                    <mxGeometry y="150" width="320" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="+ Farm (rockCount : int, &#10;              scatterType : String)&#10;&#10;+ goToNextDay () : void&#10;+ checkIfGameShouldEnd () : boolean&#10;+ resetGame () : void&#10;&#10;+ setEndGameConditionOne (status : boolean) : void&#10;+ setEndGameConditionTwo (status : boolean) : void&#10;+ setEndGameConditionThree (status : boolean) : void&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="23" vertex="1">
+                    <mxGeometry y="158" width="320" height="162" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1.006;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="28" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1210" y="700"/>
+                            <mxPoint x="1081" y="700"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="Plow" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="820" width="240" height="150" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="- costFromUsage () : double = 0&#10;- experienceFromUsage () : double = 0.5" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="28" vertex="1">
+                    <mxGeometry y="26" width="240" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="28" vertex="1">
+                    <mxGeometry y="60" width="240" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="+ Plow ()&#10;&#10;+ useTool (tile : Tile) : void&#10;+ getCostFromUsage () : double&#10;+ getExperienceFromUsage () : double" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="28" vertex="1">
+                    <mxGeometry y="68" width="240" height="82" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Farmer" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="-220" width="230" height="218" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="- bonusEarningsPerProduce : int = 0&#10;- seedCostReduction : int = 0&#10;- waterBonusLimitIncrease : int = 0&#10;- fertilizerBonusLimitIncrease : int = 0&#10;- registrationFee : double = 0" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="32" vertex="1">
+                    <mxGeometry y="26" width="230" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="32" vertex="1">
+                    <mxGeometry y="130" width="230" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="+ Farmer ()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="32" vertex="1">
+                    <mxGeometry y="138" width="230" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="RegisteredFarmer" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1370" y="-220" width="230" height="218" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="- bonusEarningsPerProduce : int = 1&#10;- seedCostReduction : int = 1&#10;- waterBonusLimitIncrease : int = 0&#10;- fertilizerBonusLimitIncrease : int = 0&#10;- registrationFee : double = 200" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
+                    <mxGeometry y="26" width="230" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="36" vertex="1">
+                    <mxGeometry y="130" width="230" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="+ RegisteredFarmer ()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="36" vertex="1">
+                    <mxGeometry y="138" width="230" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1.004;entryY=0.894;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="41" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1210" y="100"/>
+                            <mxPoint x="1210" y="59"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="DistinguishedFarmer" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="100" width="230" height="218" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="42" value="- bonusEarningsPerProduce : int = 2&#10;- seedCostReduction : int = 2&#10;- waterBonusLimitIncrease : int = 1&#10;- fertilizerBonusLimitIncrease : int = 0&#10;- registrationFee : double = 300" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="41" vertex="1">
+                    <mxGeometry y="26" width="230" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="41" vertex="1">
+                    <mxGeometry y="130" width="230" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="+ RegisteredFarmer ()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="41" vertex="1">
+                    <mxGeometry y="138" width="230" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1.017;entryY=0.894;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="46" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1490" y="100"/>
+                            <mxPoint x="1490" y="59"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="46" value="LegendaryFarmer" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1370" y="100" width="230" height="218" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="47" value="- bonusEarningsPerProduce : int = 4&#10;- seedCostReduction : int = 3&#10;- waterBonusLimitIncrease : int = 2&#10;- fertilizerBonusLimitIncrease : int = 1&#10;- registrationFee : double = 400" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="46" vertex="1">
+                    <mxGeometry y="26" width="230" height="104" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="46" vertex="1">
+                    <mxGeometry y="130" width="230" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="+ RegisteredFarmer ()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="46" vertex="1">
+                    <mxGeometry y="138" width="230" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="51" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1210" y="700"/>
+                            <mxPoint x="1080" y="700"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="51" value="WateringCan" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="420" width="240" height="150" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="- costFromUsage () : double = 0&#10;- experienceFromUsage () : double = 0.5" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="51" vertex="1">
+                    <mxGeometry y="26" width="240" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="51" vertex="1">
+                    <mxGeometry y="60" width="240" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="+ WateringCan&#10;&#10;+ useTool (tile : Tile) : void&#10;+ getCostFromUsage () : double&#10;+ getExperienceFromUsage () : double&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="51" vertex="1">
+                    <mxGeometry y="68" width="240" height="82" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="56" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1490" y="600"/>
+                            <mxPoint x="1210" y="600"/>
+                            <mxPoint x="1210" y="700"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="Fertilizer" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1370" y="420" width="240" height="150" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="57" value="- costFromUsage () : double = 10&#10;- experienceFromUsage () : double = 4" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="56" vertex="1">
+                    <mxGeometry y="26" width="240" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="56" vertex="1">
+                    <mxGeometry y="60" width="240" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="+ WateringCan&#10;&#10;+ useTool (tile : Tile) : void&#10;+ getCostFromUsage () : double&#10;+ getExperienceFromUsage () : double&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="56" vertex="1">
+                    <mxGeometry y="68" width="240" height="82" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="Pickaxe" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1370" y="620" width="240" height="150" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" value="- costFromUsage () : double = 10&#10;- experienceFromUsage () : double = 4" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="60" vertex="1">
+                    <mxGeometry y="26" width="240" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="60" vertex="1">
+                    <mxGeometry y="60" width="240" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="+ Pickaxe ()&#10;&#10;+ useTool (tile : Tile) : void&#10;+ getCostFromUsage () : double&#10;+ getExperienceFromUsage () : double&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="60" vertex="1">
+                    <mxGeometry y="68" width="240" height="82" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1.013;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="65" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1490" y="790"/>
+                            <mxPoint x="1210" y="790"/>
+                            <mxPoint x="1210" y="700"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="65" value="Shovel" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="1370" y="820" width="240" height="150" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="- costFromUsage () : double = 7&#10;- experienceFromUsage () : double = 2" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="65" vertex="1">
+                    <mxGeometry y="26" width="240" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="65" vertex="1">
+                    <mxGeometry y="60" width="240" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="+ Shovel ()&#10;&#10;+ useTool (tile : Tile) : void&#10;+ getCostFromUsage () : double&#10;+ getExperienceFromUsage () : double" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="65" vertex="1">
+                    <mxGeometry y="68" width="240" height="82" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="Carrot" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="-70" y="86" width="140" height="96" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="75" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="73" vertex="1">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="+ Carrot ()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="73" vertex="1">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="Potato" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
+                    <mxGeometry x="-230" y="86" width="140" height="96" as="geometry">
+                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="79" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="77" vertex="1">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="+ Potato ()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="77" vertex="1">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.522;exitY=1.013;exitDx=0;exitDy=0;entryX=1.013;entryY=0.894;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="35" target="10" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="54" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="47" vertex="1" connectable="0">
-                    <mxGeometry x="-0.2128" y="2" relative="1" as="geometry">
+                <mxCell id="104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.517;exitY=1.025;exitDx=0;exitDy=0;entryX=1.017;entryY=0.904;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" parent="1" source="39" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1489" y="60"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WKixGB2jlF9IxC7nuFK1-144" value="TENTATIVE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="104">
+                    <mxGeometry x="0.7964" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.013;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="61" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1370" y="700"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="107" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-180;" parent="1" vertex="1">
+                    <mxGeometry x="1070" y="697" width="20" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="955" y="365" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.004;entryY=0.676;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="22" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="117" value="0..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="116" vertex="1" connectable="0">
+                    <mxGeometry x="-0.7655" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="118" value="creates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="116" vertex="1" connectable="0">
+                    <mxGeometry x="0.3132" y="-1" relative="1" as="geometry">
                         <mxPoint x="-1" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="99NaP7L8j-EvRrVccQtR-36" value="WateringCan" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="1" vertex="1">
-                    <mxGeometry x="955" y="590" width="245" height="216" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
+                <mxCell id="119" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="524" y="712" width="30" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="33" value="&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="99NaP7L8j-EvRrVccQtR-36" vertex="1">
-                    <mxGeometry y="26" width="245" height="34" as="geometry"/>
+                <mxCell id="120" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.003;entryY=0.247;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="10" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="99NaP7L8j-EvRrVccQtR-38" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="99NaP7L8j-EvRrVccQtR-36" vertex="1">
-                    <mxGeometry y="60" width="245" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="99NaP7L8j-EvRrVccQtR-39" value="+ WateringCan ()&#10;+ waterPlant (tile : Tile) : void&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="99NaP7L8j-EvRrVccQtR-36" vertex="1">
-                    <mxGeometry y="68" width="245" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="34" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;exitX=1.013;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="99NaP7L8j-EvRrVccQtR-33" target="13" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="1250" y="350" as="sourcePoint"/>
-                        <mxPoint x="1300" y="580" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="1300" y="430"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="35" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;" parent="1" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="1050" y="540" as="sourcePoint"/>
-                        <mxPoint x="1050" y="590" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="36" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;exitX=1.002;exitY=0.02;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.016;entryY=0.018;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="8" target="99NaP7L8j-EvRrVccQtR-35" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="870.0500000000002" y="228" as="sourcePoint"/>
-                        <mxPoint x="920" y="350" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="880" y="172"/>
-                            <mxPoint x="880" y="440"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="37" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.503;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="17" target="12" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="230" y="390" as="sourcePoint"/>
-                        <mxPoint x="390" y="390" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="190" y="400"/>
-                            <mxPoint x="250" y="400"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="38" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=-0.004;exitY=0.915;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="22" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="380" y="580" as="sourcePoint"/>
-                        <mxPoint x="330" y="599" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="50" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;entryX=-0.022;entryY=0.058;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.016;exitY=0.793;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="18" target="8" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="345" y="280" as="sourcePoint"/>
-                        <mxPoint x="505" y="280" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="420" y="560"/>
-                            <mxPoint x="420" y="180"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="51" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="50" vertex="1" connectable="0">
-                    <mxGeometry x="-0.0236" y="-3" relative="1" as="geometry">
+                <mxCell id="121" value="creates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="120" vertex="1" connectable="0">
+                    <mxGeometry x="0.1947" y="-1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
-    <diagram name="Whole Problem" id="TV9MaMQTpC_s31ESF9qn">
-        <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
-            <root>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-0"/>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-1" parent="sdoeCLQEJergKp6-cmFt-0"/>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-2" value="Player" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="880" y="10" width="250" height="360" as="geometry">
+                <mxCell id="122" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="2" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="123" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="86" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="124" value="Turnip" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="86" width="140" height="96" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-3" value="- inventory : Inventory&#10;- money : int = 100&#10;- level : int = 0&#10;- experience : double = 0.0&#10;- farmerType : String = &quot;Farmer&quot;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-2" vertex="1">
-                    <mxGeometry y="26" width="250" height="104" as="geometry"/>
+                <mxCell id="125" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="124">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-4" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-2" vertex="1">
-                    <mxGeometry y="130" width="250" height="8" as="geometry"/>
+                <mxCell id="126" value="+ Turnip ()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="124">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-5" value="+ Player ()&#10;&#10;+ harvestCrop (tile : Tile) : void&#10;+ addMoney () : void&#10;+ spendMoney (price : int) : void&#10;+ addExperience () : void&#10;+ levelUp () : void&#10;+ resetPlayer () : void&#10;&#10;+ getMoney (income : int) : int&#10;+ getLevel () : int&#10;+ getExperience () : double&#10;+ getInventory () : Inventory&#10;+ getFarmerType () : String&#10;+ setFarmerType (type : String) : void &#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-2" vertex="1">
-                    <mxGeometry y="138" width="250" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-6" value="Farm" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="490" y="30" width="160" height="250" as="geometry">
+                <mxCell id="127" value="Rose" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="-230" y="437" width="140" height="96" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-7" value="- tileList : Tile[]&#10;- day : int = 1&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-6" vertex="1">
-                    <mxGeometry y="26" width="160" height="84" as="geometry"/>
+                <mxCell id="128" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="127">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-8" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-6" vertex="1">
-                    <mxGeometry y="110" width="160" height="8" as="geometry"/>
+                <mxCell id="129" value="+ Rose ()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="127">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-9" value="+ Farm ()&#10;&#10;+ nextDay () : void&#10;+ getTile (index : int) : Tile&#10;+ resetGame () : void&#10;+ getDay () : int &#10;&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-6" vertex="1">
-                    <mxGeometry y="118" width="160" height="132" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-10" value="Plow" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="940" y="490" width="160" height="216" as="geometry">
+                <mxCell id="130" value="Tulips" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="-230" y="547" width="140" height="96" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-11" value="&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-10" vertex="1">
-                    <mxGeometry y="26" width="160" height="34" as="geometry"/>
+                <mxCell id="131" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="130">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-12" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-10" vertex="1">
-                    <mxGeometry y="60" width="160" height="8" as="geometry"/>
+                <mxCell id="132" value="+ Tulips ()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="130">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-13" value="+ Plow ()&#10;+ plowTile(tile : Tile) : void&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-10" vertex="1">
-                    <mxGeometry y="68" width="160" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-14" value="Tile" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="370" y="376" width="280" height="510" as="geometry">
+                <mxCell id="133" value="Sunflower" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="-230" y="657" width="140" height="96" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-15" value="- isPlowed : boolean&#10;- isPlanted : boolean&#10;- isWatered : boolean&#10;- isFertilized : boolean&#10;- hasRock : boolean&#10;- totalWatered : int = 0&#10;- totalFertilized : int = 0&#10;- turnip : Turnip&#10;- carrot : Carrot&#10;- potato : Potato&#10;- rose : Rose&#10;- tulip : Tulip&#10;- sunflower : Sunflower&#10;- mango : Mango&#10;- apple : Apple&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-14" vertex="1">
-                    <mxGeometry y="26" width="280" height="224" as="geometry"/>
+                <mxCell id="134" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="133">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-16" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-14" vertex="1">
-                    <mxGeometry y="250" width="280" height="8" as="geometry"/>
+                <mxCell id="135" value="+ Sunflower ()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="133">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-17" value="+ Tile ()&#10;&#10;+ plantSeed (name : String, player : Player) : void&#10;+ harvestPlant () : void&#10;&#10;+ getTurnip () : Turnip&#10;+ getCarrot () : Carrot&#10;+ getPotato () : Potato&#10;+ getRose () : Rose&#10;+ getTulip () : Tulip&#10;+ getSunflower () : Sunflower&#10;+ getMango () : Mango&#10;+ getApple () : Apple&#10;+ getPlantStatus () : boolean&#10;+ setPlantStatus (status : boolean) : void&#10;+ getPlowStatus () : boolean&#10;+ setIsPlowed (isPlowed : boolean) : void&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-14" vertex="1">
-                    <mxGeometry y="258" width="280" height="252" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-18" value="Turnip" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="30" y="60" width="240" height="460" as="geometry">
+                <mxCell id="136" value="Mango" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="980" width="140" height="96" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-19" value="- daysLeft : int = 2 &#10;- cropType : String = &quot;Root crop&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 1&#10;- bonusLimitWater : int = 2&#10;- minimumFertilizer : int = 0&#10;- bonusLimitFertilizer : int = 1&#10;- seedCost : int = 5&#10;- sellingPrice : int = 6&#10;- experienceYield : double = 5.0 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-18" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
+                <mxCell id="137" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="136">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-20" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-18" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
+                <mxCell id="138" value="+ Mango ()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="136">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-21" value="+ Turnip ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-18" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-22" value="Inventory" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="1340" y="40" width="225" height="230" as="geometry">
+                <mxCell id="139" value="Apple" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="980" width="140" height="96" as="geometry">
                         <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-23" value="- plow : Plow&#10;- wateringCan : WateringCan" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-22" vertex="1">
-                    <mxGeometry y="26" width="225" height="84" as="geometry"/>
+                <mxCell id="140" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="139">
+                    <mxGeometry y="26" width="140" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-24" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-22" vertex="1">
-                    <mxGeometry y="110" width="225" height="8" as="geometry"/>
+                <mxCell id="141" value="+ Apple ()&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="139">
+                    <mxGeometry y="34" width="140" height="62" as="geometry"/>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-25" value="+ Inventory ()&#10;&#10;+ getPlow () : Plow&#10;+ getWateringCan () : WateringCan&#10;+ getFertilize () : Fertilizer&#10;+ getPickaxe () : Pickaxe&#10;+ getShovel () : Shovel" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-22" vertex="1">
-                    <mxGeometry y="118" width="225" height="112" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-54" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=1.005;entryY=0.24;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-22" source="sdoeCLQEJergKp6-cmFt-10">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="208.75" y="200.12" as="sourcePoint"/>
-                        <mxPoint y="200.0000000000001" as="targetPoint"/>
+                <mxCell id="142" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="132" target="22">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint x="-10" y="260" as="sourcePoint"/>
+                        <mxPoint x="250" y="250" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="-320" y="360"/>
-                            <mxPoint x="-140" y="360"/>
-                            <mxPoint x="-140" y="200"/>
+                            <mxPoint y="612"/>
+                            <mxPoint y="578"/>
                         </Array>
+                        <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-58" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.404;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-22" source="v3-Kou40kLXpXCnsbd1Q-9">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="336.5999999999999" y="420" as="sourcePoint"/>
-                        <mxPoint x="224.99999999999955" y="200.0000000000001" as="targetPoint"/>
+                <mxCell id="143" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint x="-89" y="490" as="sourcePoint"/>
+                        <mxPoint x="89.99999999999986" y="578.22" as="targetPoint"/>
                         <Array as="points">
-                            <mxPoint x="485" y="200"/>
-                            <mxPoint x="390" y="200"/>
+                            <mxPoint x="1" y="490"/>
+                            <mxPoint x="0.5999999999999996" y="578"/>
                         </Array>
+                        <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-26" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1.005;entryY=0.74;entryDx=0;entryDy=0;entryPerimeter=0;" parent="sdoeCLQEJergKp6-cmFt-1" source="sdoeCLQEJergKp6-cmFt-10" target="sdoeCLQEJergKp6-cmFt-17" edge="1">
+                <mxCell id="144" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.306;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="135">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint x="-60" y="620" as="sourcePoint"/>
+                        <mxPoint x="89.99999999999977" y="578" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1" y="710"/>
+                            <mxPoint x="0.5999999999999996" y="577.78"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="145" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="76">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint x="1" y="340" as="sourcePoint"/>
+                        <mxPoint x="89.99999999999977" y="578" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1" y="489.78"/>
+                            <mxPoint x="0.5999999999999996" y="577.78"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="146" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.521;exitY=1.005;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="126">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint y="182" as="sourcePoint"/>
+                        <mxPoint x="89.99999999999977" y="578" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="163" y="240"/>
+                            <mxPoint x="1" y="240"/>
+                            <mxPoint x="1" y="489.78"/>
+                            <mxPoint x="0.5999999999999996" y="577.78"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="147" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.498;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="80">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint y="182" as="sourcePoint"/>
+                        <mxPoint x="89.99999999999977" y="578" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-160" y="240"/>
+                            <mxPoint x="1" y="240"/>
+                            <mxPoint x="1" y="489.78"/>
+                            <mxPoint x="0.5999999999999996" y="577.78"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="148" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="139">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint x="-90" y="709.9720000000002" as="sourcePoint"/>
+                        <mxPoint x="89.99999999999977" y="578" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="120" y="940"/>
+                            <mxPoint x="1" y="940"/>
+                            <mxPoint x="1" y="710"/>
+                            <mxPoint x="0.5999999999999996" y="577.78"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="149" value="" style="endArrow=block;endSize=16;endFill=0;html=1;entryX=-0.002;entryY=0.135;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="136">
+                    <mxGeometry x="-0.125" y="40" width="160" relative="1" as="geometry">
+                        <mxPoint x="119.4" y="980.22" as="sourcePoint"/>
+                        <mxPoint x="89.39999999999978" y="578.22" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="280" y="940"/>
+                            <mxPoint x="119.4" y="940.22"/>
+                            <mxPoint x="0.40000000000000036" y="940.22"/>
+                            <mxPoint x="0.40000000000000036" y="710.22"/>
+                            <mxPoint y="578"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="WKixGB2jlF9IxC7nuFK1-157" style="edgeStyle=none;html=1;entryX=1.008;entryY=0.743;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12" target="6">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="1020" y="780"/>
-                            <mxPoint x="960" y="780"/>
-                            <mxPoint x="770" y="780"/>
-                            <mxPoint x="770" y="820"/>
+                            <mxPoint x="895" y="547"/>
                         </Array>
-                        <mxPoint x="1620" y="860" as="sourcePoint"/>
-                        <mxPoint x="770" y="670" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-27" value="Plows" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="sdoeCLQEJergKp6-cmFt-26" vertex="1" connectable="0">
-                    <mxGeometry x="-0.0348" y="-2" relative="1" as="geometry">
+                <mxCell id="WKixGB2jlF9IxC7nuFK1-158" value="plants seed on" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="WKixGB2jlF9IxC7nuFK1-157">
+                    <mxGeometry x="-0.6244" relative="1" as="geometry">
                         <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-28" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1.008;entryY=0.938;entryDx=0;entryDy=0;entryPerimeter=0;" parent="sdoeCLQEJergKp6-cmFt-1" source="sdoeCLQEJergKp6-cmFt-32" target="sdoeCLQEJergKp6-cmFt-17" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="1213" y="870"/>
-                            <mxPoint x="1130" y="870"/>
-                            <mxPoint x="940" y="870"/>
-                            <mxPoint x="840" y="870"/>
-                            <mxPoint x="690" y="870"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-29" value="Waters" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="sdoeCLQEJergKp6-cmFt-28" vertex="1" connectable="0">
-                    <mxGeometry x="0.0558" y="4" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-32" value="WateringCan" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="1120" y="490" width="185" height="216" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-33" value="&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-32" vertex="1">
-                    <mxGeometry y="26" width="185" height="34" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-34" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-32" vertex="1">
-                    <mxGeometry y="60" width="185" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-35" value="+ WateringCan ()&#10;+ waterTile (tile : Tile) : void&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="sdoeCLQEJergKp6-cmFt-32" vertex="1">
-                    <mxGeometry y="68" width="185" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-39" value="50" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.503;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="sdoeCLQEJergKp6-cmFt-1" source="sdoeCLQEJergKp6-cmFt-14" target="sdoeCLQEJergKp6-cmFt-9" edge="1">
-                    <mxGeometry x="-0.7988" width="160" relative="1" as="geometry">
-                        <mxPoint x="550" y="410" as="sourcePoint"/>
-                        <mxPoint x="710" y="410" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="510" y="330"/>
-                            <mxPoint x="570" y="330"/>
-                        </Array>
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-40" value="0..1" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=-0.007;entryY=0.644;entryDx=0;entryDy=0;entryPerimeter=0;" parent="sdoeCLQEJergKp6-cmFt-1" edge="1" target="sdoeCLQEJergKp6-cmFt-15">
-                    <mxGeometry x="-0.9214" width="160" relative="1" as="geometry">
-                        <mxPoint x="140" y="520" as="sourcePoint"/>
-                        <mxPoint x="370" y="560" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="140" y="548"/>
-                        </Array>
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-41" value="" style="endArrow=block;startArrow=block;endFill=1;startFill=1;html=1;entryX=-0.022;entryY=0.058;entryDx=0;entryDy=0;entryPerimeter=0;" parent="sdoeCLQEJergKp6-cmFt-1" target="sdoeCLQEJergKp6-cmFt-5" edge="1">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="650" y="481" as="sourcePoint"/>
-                        <mxPoint x="825" y="300" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="740" y="481"/>
-                            <mxPoint x="740" y="160"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="sdoeCLQEJergKp6-cmFt-42" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="sdoeCLQEJergKp6-cmFt-41" vertex="1" connectable="0">
-                    <mxGeometry x="-0.0236" y="-3" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-1" value="Fertilizer" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="1320" y="490" width="185" height="216" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-2" value="&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-1" vertex="1">
-                    <mxGeometry y="26" width="185" height="34" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-3" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-1" vertex="1">
-                    <mxGeometry y="60" width="185" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-4" value="+ Fertilizer ()&#10;+ fertilizeTile (tile : Tile) : void&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-1" vertex="1">
-                    <mxGeometry y="68" width="185" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-5" value="Pickaxe" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="1520" y="490" width="185" height="216" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-7" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-5" vertex="1">
-                    <mxGeometry y="26" width="185" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-8" value="+ Pickaxe ()&#10;+ RemoveRock (tile : Tile) : void&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-5" vertex="1">
-                    <mxGeometry y="34" width="185" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-9" value="Shovel" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="1720" y="490" width="210" height="216" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-10" value="&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-9" vertex="1">
-                    <mxGeometry y="26" width="210" height="34" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-11" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-9" vertex="1">
-                    <mxGeometry y="60" width="210" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-12" value="+ Shovel ()&#10;+ DigWitheredPlant (tile : Tile) : void&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-9" vertex="1">
-                    <mxGeometry y="68" width="210" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-16" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.865;entryY=1.011;entryDx=0;entryDy=0;entryPerimeter=0;" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-1" target="sdoeCLQEJergKp6-cmFt-17" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="1413" y="910"/>
-                            <mxPoint x="1133" y="910"/>
-                            <mxPoint x="612" y="910"/>
-                        </Array>
-                        <mxPoint x="1145.46" y="706" as="sourcePoint"/>
-                        <mxPoint x="489.99999999999994" y="803.0720000000001" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-17" value="Fertilizes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="v3-Kou40kLXpXCnsbd1Q-16" vertex="1" connectable="0">
-                    <mxGeometry x="0.0558" y="4" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-18" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.814;entryY=1.007;entryDx=0;entryDy=0;entryPerimeter=0;fontStyle=1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-5" target="sdoeCLQEJergKp6-cmFt-17" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="1613" y="930"/>
-                            <mxPoint x="598" y="940"/>
-                        </Array>
-                        <mxPoint x="1372.5" y="705.9999999999998" as="sourcePoint"/>
-                        <mxPoint x="450" y="803.0720000000001" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-19" value="Removes Rock on" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="v3-Kou40kLXpXCnsbd1Q-18" vertex="1" connectable="0">
-                    <mxGeometry x="0.0558" y="4" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-20" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.77;entryY=1.011;entryDx=0;entryDy=0;entryPerimeter=0;" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-9" target="sdoeCLQEJergKp6-cmFt-17" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="1825" y="960"/>
-                            <mxPoint x="586" y="960"/>
-                        </Array>
-                        <mxPoint x="1564.5" y="705.9999999999998" as="sourcePoint"/>
-                        <mxPoint x="402" y="803.0720000000001" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-21" value="Digs Withered Plant in" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="v3-Kou40kLXpXCnsbd1Q-20" vertex="1" connectable="0">
-                    <mxGeometry x="0.0558" y="4" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-22" value="Carrot" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="-230" y="60" width="240" height="460" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-23" value="- daysLeft : int = 3 &#10;- cropType : String = &quot;Root crop&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 1&#10;- bonusLimitWater : int = 2&#10;- minimumFertilizer : int = 0&#10;- bonusLimitFertilizer : int = 1&#10;- seedCost : int = 10&#10;- sellingPrice : int = 9&#10;- experienceYield : double = 7.5 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-22" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-24" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-22" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-25" value="+ Carrot ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-22" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-26" value="Potato" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="-490" y="60" width="240" height="460" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-27" value="- daysLeft : int = 5 &#10;- cropType : String = &quot;Root crop&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 3&#10;- bonusLimitWater : int = 4&#10;- minimumFertilizer : int = 1&#10;- bonusLimitFertilizer : int = 2&#10;- seedCost : int = 20&#10;- sellingPrice : int = 3&#10;- experienceYield : double = 12.5 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-26" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-28" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-26" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-29" value="+ Potato ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-26" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-30" value="Rose" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="30" y="730" width="240" height="460" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-31" value="- daysLeft : int = 1 &#10;- cropType : String = &quot;Flower&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 1&#10;- bonusLimitWater : int = 2&#10;- minimumFertilizer : int = 0&#10;- bonusLimitFertilizer : int = 1&#10;- seedCost : int = 5&#10;- sellingPrice : int = 5&#10;- experienceYield : double = 2.5 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-30" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-32" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-30" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-33" value="+ Rose ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-30" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-34" value="Tulips" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="-230" y="730" width="240" height="460" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-35" value="- daysLeft : int = 2&#10;- cropType : String = &quot;Flower&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 2&#10;- bonusLimitWater : int = 3&#10;- minimumFertilizer : int = 0&#10;- bonusLimitFertilizer : int = 1&#10;- seedCost : int = 10&#10;- sellingPrice : int = 9&#10;- experienceYield : double = 5.0 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-34" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-36" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-34" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-37" value="+ Tulips ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-34" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-38" value="Sunflower" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="-490" y="730" width="240" height="460" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-39" value="- daysLeft : int = 3 &#10;- cropType : String = &quot;Flower&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 2&#10;- bonusLimitWater : int = 3&#10;- minimumFertilizer : int = 1&#10;- bonusLimitFertilizer : int = 2&#10;- seedCost : int = 20&#10;- sellingPrice : int = 19&#10;- experienceYield : double = 7.5 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-38" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-40" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-38" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-41" value="+ Sunflower ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-38" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-42" value="Mango" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="570" y="1050" width="240" height="460" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-43" value="- daysLeft : int = 10 &#10;- cropType : String = &quot;Fruit Tree&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 7&#10;- bonusLimitWater : int = 7&#10;- minimumFertilizer : int = 4&#10;- bonusLimitFertilizer : int = 4&#10;- seedCost : int = 100&#10;- sellingPrice : int = 8&#10;- experienceYield : double = 25.0 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-42" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-44" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-42" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-45" value="+ Mango ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-42" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-46" value="Apple" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="sdoeCLQEJergKp6-cmFt-1" vertex="1">
-                    <mxGeometry x="310" y="1050" width="240" height="460" as="geometry">
-                        <mxRectangle x="550" y="140" width="160" height="26" as="alternateBounds"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-47" value="- daysLeft : int = 10&#10;- cropType : String = &quot;Fruit Tree&quot;&#10;- isWithered : boolean&#10;- isHarvestable : boolean&#10;- harvestYield : int&#10;- minimumWater : int = 7&#10;- bonusLimitWater : int = 7&#10;- minimumFertilizer : int = 5&#10;- bonusLimitFertilizer : int = 5&#10;- seedCost : int = 200&#10;- sellingPrice : int = 5&#10;- experienceYield : double = 25.0 &#10;&#10;&#10;&#10;&#10;&#10;&#10;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-46" vertex="1">
-                    <mxGeometry y="26" width="240" height="204" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-48" value="" style="line;html=1;strokeWidth=1;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-46" vertex="1">
-                    <mxGeometry y="230" width="240" height="8" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-49" value="+ Apple ()&#10;&#10;+ checkIfWithered () : boolean&#10;+ checkIfHarvestable () : boolean&#10;+ subtractDaysLeft () : void&#10;+ getHarvestYield () : int&#10;+ getSellingPrice () : int&#10;+ getDaysLeft () : int&#10;+ getMinimumWater () : int&#10;+ getBonusLimitWater () : int&#10;+ getMinimumFertilizer () : int&#10;+ getBonusLimitFertilizer () : int&#10;+ getSeedCost () : int&#10;+ getExperienceYield () : double&#10;&#10;&#10;&#10; " style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="v3-Kou40kLXpXCnsbd1Q-46" vertex="1">
-                    <mxGeometry y="238" width="240" height="222" as="geometry"/>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-50" value="0..1" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1">
-                    <mxGeometry x="-0.9628" width="160" relative="1" as="geometry">
-                        <mxPoint x="-122" y="520" as="sourcePoint"/>
-                        <mxPoint x="370" y="566" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="-122" y="566"/>
-                        </Array>
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-0" value="0..1" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1">
-                    <mxGeometry x="-0.9756" width="160" relative="1" as="geometry">
-                        <mxPoint x="-383" y="520" as="sourcePoint"/>
-                        <mxPoint x="370" y="586" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="-383" y="586"/>
-                        </Array>
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-13" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.446;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-38">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="-383" y="540" as="sourcePoint"/>
-                        <mxPoint x="370" y="606" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="-383" y="606"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-61" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="v3-Kou40kLXpXCnsbd1Q-13">
-                    <mxGeometry x="-0.9764" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-14" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.454;exitY=0.002;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-34">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="-122.00000000000023" y="590" as="sourcePoint"/>
-                        <mxPoint x="370" y="636" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="-122" y="636"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-60" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="v3-Kou40kLXpXCnsbd1Q-14">
-                    <mxGeometry x="-0.9588" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-15" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.463;exitY=0.001;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-30">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="140" y="640" as="sourcePoint"/>
-                        <mxPoint x="370" y="668" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="140" y="668"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-59" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="v3-Kou40kLXpXCnsbd1Q-15">
-                    <mxGeometry x="-0.9148" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-51" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0.533;exitY=-0.003;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-46">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="261.1200000000001" y="952.46" as="sourcePoint"/>
-                        <mxPoint x="409" y="890" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="438" y="1000"/>
-                            <mxPoint x="409" y="1000"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-62" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="v3-Kou40kLXpXCnsbd1Q-51">
-                    <mxGeometry x="-0.9067" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-52" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-42">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="459.9999999999999" y="1050" as="sourcePoint"/>
-                        <mxPoint x="460" y="890" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="690" y="990"/>
-                            <mxPoint x="460" y="990"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-63" value="0..1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="v3-Kou40kLXpXCnsbd1Q-52">
-                    <mxGeometry x="-0.9481" y="-1" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-53" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=1.005;entryY=0.24;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" target="sdoeCLQEJergKp6-cmFt-5">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="1340" y="199" as="sourcePoint"/>
-                        <mxPoint x="1360" y="380" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-55" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.147;entryY=1.027;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="sdoeCLQEJergKp6-cmFt-32" target="sdoeCLQEJergKp6-cmFt-25">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="1050" y="540" as="sourcePoint"/>
-                        <mxPoint x="1370" y="290.0000000000001" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="1213" y="450"/>
-                            <mxPoint x="1240" y="450"/>
-                            <mxPoint x="1240" y="320"/>
-                            <mxPoint x="1373" y="320"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-56" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.404;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-1" target="sdoeCLQEJergKp6-cmFt-25">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="1222.5" y="500" as="sourcePoint"/>
-                        <mxPoint x="1383.0749999999998" y="283.0240000000001" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="1410" y="440"/>
-                            <mxPoint x="1431" y="440"/>
-                            <mxPoint x="1431" y="330"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="v3-Kou40kLXpXCnsbd1Q-57" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.404;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="sdoeCLQEJergKp6-cmFt-1" source="v3-Kou40kLXpXCnsbd1Q-5">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="1482.5" y="490" as="sourcePoint"/>
-                        <mxPoint x="1500.8999999999996" y="270.0000000000001" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="1613" y="440"/>
-                            <mxPoint x="1501" y="440"/>
-                            <mxPoint x="1501" y="330"/>
-                        </Array>
                     </mxGeometry>
                 </mxCell>
             </root>

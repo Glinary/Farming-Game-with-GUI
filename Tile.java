@@ -1,67 +1,73 @@
 public class Tile {
-    private boolean isPlowed = false;
-    private boolean isPlanted = false;
-    private boolean isWatered = false;
-    private Turnip turnip;
+    private boolean isPlowed;
+    private boolean hasRock;
+    private boolean  hasCrop;
+    private Crop crop;
 
-    public Tile() {
-        
+    public Tile () {
+
     }
 
-    public void plantSeed(String name, Player player) {
-
-        //check if money is enough
-        switch (name) {
-            case "Turnip":
-                if (player.getMoney() >= 5) {
-                    if (this.isPlanted == false) {
-                        this.isPlanted = true;
-                        this.turnip = new Turnip();
-
-                        //spend money
-                        
-                    } else {
-                        System.out.println("A seed is already planted in this tile.");
-                    }
-                }
-                break;
-            default: 
-                System.out.println("Invalid");
-                break;
-        }
-    }
-
-    public void harvestPlant() {
-        this.isPlowed = false;
-        this.isPlanted = false;
-    }
-
-    public Turnip getTurnip() {
-        return this.turnip;
-    }
-
-    public boolean getPlantStatus() {
-        return this.isPlanted;
-    }
-
-    public void setPlantStatus(boolean status) {
-        this.isPlanted = status;
-    }
-
-    public boolean getPlowStatus() {
+    public boolean getIsPlowed () {
         return this.isPlowed;
     }
 
-    public boolean getIsWatered() {
-        return this.isWatered;
+    public boolean getHasRock () {
+        return this.hasRock;
     }
 
-    public void setIsWatered(boolean status) {
-        this.isWatered = status;
+    public boolean getHasCrop () {
+        return this.hasCrop;
     }
 
-    public void setIsPlowed(boolean isPlowed) {
-        this.isPlowed = isPlowed;
+    public void setIsPlowed (boolean status) {
+        this.isPlowed = status;
     }
-    
+
+    public void setHasRock (boolean status) {
+        this.hasRock = status;
+    }
+
+    public void setHasCrop (boolean status) {
+        this.hasCrop = status;
+    }
+
+    public void resetStats () {
+        this.isPlowed = false;
+        this.hasRock = false;
+        this.hasCrop = false;
+        this.crop = null;
+    }
+
+    public Crop getCrop() {
+        return this.crop;
+    }
+
+    public void createCrop(int num) {
+        switch (num) {
+            case 1:
+                this.crop = new Turnip();
+                break;
+            case 2:
+                this.crop = new Carrot();
+                break;
+            case 3:
+                this.crop = new Potato();
+                break;
+            case 4:
+                this.crop = new Rose();
+                break;
+            case 5:
+                this.crop = new Tulips();
+                break;
+            case 6:
+                this.crop = new Sunflower();
+                break;
+            case 7:
+                this.crop = new Mango();
+                break;
+            case 8:
+                this.crop = new Apple();
+        }
+    }
 }
