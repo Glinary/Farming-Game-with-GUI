@@ -10,7 +10,8 @@ public class Shovel extends Tool {
         if(!(tile.getIsPlowed() == false || tile.getHasRock())) {
             tile.resetStats();
             System.out.println("You used a shovel.");
-        }
+        } else
+            System.out.println("You cannot use the shovel");
         return true;
     }
     public double getCostFromUsage () {

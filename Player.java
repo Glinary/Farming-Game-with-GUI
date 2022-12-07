@@ -26,6 +26,10 @@ public class Player {
         this.objectCoins += num;
     }
 
+    public void spendObjectCoins (double num) {
+        this.objectCoins -= num;
+    }
+
     public void setLevel () {
         double num = this.experience / 100; // TODO: not yet sure with the formula
         this.level = (int)num;
@@ -137,7 +141,10 @@ public class Player {
     }
 
     public void plow (Tile tile) {
-        if (toolList.get(0).useTool(tile)) {
+
+        if (tile.getHasRock())
+            System.out.println("You have to remove the rock first");
+        else if (toolList.get(0).useTool(tile)) {
             this.objectCoins -= toolList.get(0).getCostFromUsage();
             this.experience += toolList.get(0).getExperienceFromUsage();
         }
@@ -166,6 +173,11 @@ public class Player {
     }
 
     public void shovel (Tile tile) {
+
+        if (tile.getHasCrop()) {
+            System.out.println("Oh no! You shoveled a plant on the tile");
+            tile.setHasCrop(false);
+        }
         if (toolList.get(4).useTool(tile)) {
             this.objectCoins -= toolList.get(4).getCostFromUsage();
             this.experience += toolList.get(4).getExperienceFromUsage();
@@ -173,7 +185,9 @@ public class Player {
     }
 
     public void harvest (Tile tile) {
-        if(tile.getCrop().getIsHarvestable()) {
+        if (!tile.getHasCrop())
+            System.out.println("Tile does not have a crop");
+        else if(tile.getCrop().getIsHarvestable()) {
             double harvestTotal, waterBonus, fertilizerBonus, finalHarvestPrice;
             int totalWaterCount, totalFertilizerCount;
             harvestTotal = tile.getCrop().getHarvestYield() * (tile.getCrop().getBaseSellingPrice() + this.bonusEarningsPerProduce);
@@ -204,6 +218,9 @@ public class Player {
 
     public void plantSeed (Tile tile) {
 
+        if (tile.getHasRock())
+            System.out.println("There's a rock!");
+
         if (!tile.getHasCrop() && tile.getIsPlowed() && !tile.getHasRock()) {
             System.out.println("Select which seed do you want to plant: ");
             System.out.println("[1] Turnip: " + (5 - this.seedCostReduction) + " ObjectCoins");
@@ -220,10 +237,31 @@ public class Player {
             while (input < 1 || input > 8) 
                 sc.nextInt();
 
+            double totalCost = 0;
+            switch(input) {
+                case 1: totalCost = 5 - this.seedCostReduction;
+                break;
+                case 2: totalCost = 10 - this.seedCostReduction;
+                break;
+                case 3: totalCost = 20 - this.seedCostReduction;
+                break;
+                case 4: totalCost = 5 - this.seedCostReduction;
+                break;
+                case 5: totalCost = 10 - this.seedCostReduction;
+                break;
+                case 6: totalCost = 20 - this.seedCostReduction;
+                break;
+                case 7: totalCost = 100 - this.seedCostReduction;
+                break;
+                case 8: totalCost = 200 - this.seedCostReduction;
+                break;
+            }
+
+            spendObjectCoins(totalCost);
             tile.createCrop(input);
             tile.setHasCrop(true);
-            sc.close();
-
+            System.out.println("You have successfully planted on the tile");
+            //sc.close();
         } else {
             System.out.println("You cannot plant a seed on this tile");
         }
@@ -235,5 +273,13 @@ public class Player {
         System.out.println("Level: " + this.level);
         System.out.println("Experience: " + this.experience);
         System.out.println("Farmer Type: " + this.farmerType);
+    }
+    
+    public double getObjectcoins () {
+        return this.objectCoins;
+    }
+
+    public String getFarmerType () {
+        return this.farmerType;
     }
 }
