@@ -12,8 +12,8 @@ public class Player {
     private double experience = 0.0;
     private ArrayList<Tool> toolList;
     private String farmerType = "Farmer";
-    private int bonusEarningsPerProduce = 0;
-    private int seedCostReduction = 0;
+    private double bonusEarningsPerProduce = 0;
+    private double seedCostReduction = 0;
     private int waterBonusLimitIncrease = 0;
     private int fertilizerBonusLimitIncrease = 0;
 
@@ -22,7 +22,6 @@ public class Player {
      */
     public Player () {
         toolList = new ArrayList<Tool>();
-
         toolList.add(new Plow());
         toolList.add(new WateringCan());
         toolList.add(new Fertilizer());
@@ -181,9 +180,7 @@ public class Player {
      */
     public void plow (Tile tile) {
 
-        if (tile.getHasRock())
-            System.out.println("You have to remove the rock first");
-        else if (toolList.get(0).useTool(tile)) {
+        if (toolList.get(0).useTool(tile)) {
             this.objectCoins -= toolList.get(0).getCostFromUsage();
             this.experience += toolList.get(0).getExperienceFromUsage();
         }
@@ -235,8 +232,7 @@ public class Player {
 
     /**
      * This method lets the player use the shovel tool on the tile if they have enough money, 
-     * and then deducts their money and increases the player's experience. The plant will
-     * also be shoveled if used on a planted tile.
+     * and then deducts their money and increases the player's experience.
      * 
      * @param tile - the tile to be shoveled
      */
@@ -244,15 +240,9 @@ public class Player {
 
         if (this.objectCoins < 7)
             System.out.println("You do not have enough coins to use shovel");
-        else {
-            if (tile.getHasCrop()) {
-                System.out.println("Oh no! You shoveled a plant on the tile");
-                tile.setHasCrop(false);
-            }
-            if (toolList.get(4 ).useTool(tile)) {
-                this.objectCoins -= toolList.get(4).getCostFromUsage();
-                this.experience += toolList.get(4).getExperienceFromUsage();
-            }
+        else if (toolList.get(4).useTool(tile)){
+            this.objectCoins -= toolList.get(4).getCostFromUsage();
+            this.experience += toolList.get(4).getExperienceFromUsage();
         }
     }
 
@@ -423,7 +413,7 @@ public class Player {
      * This method returns the amount of objectCoins the player has
      * @return - the value of the objectCoins
      */
-    public double getObjectcoins () {
+    public double getObjectCoins () {
         return this.objectCoins;
     }
 

@@ -1,9 +1,12 @@
 import java.util.Scanner;
+import java.io.*;
 
 public class Controller {
     
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
+        
+        String readFromText = "";
         Farm myFarm = null;
         Tile currTile = null;
         boolean endGame = false,
@@ -22,15 +25,36 @@ public class Controller {
         switch(gameMode) {
             case 1:
                 System.out.println("You picked easy mode");
-                myFarm = new Farm(10);
+                try {
+                    Scanner textScanner = new Scanner(new File("easy.txt"));
+                    readFromText = textScanner.next();
+                    myFarm = new Farm(Integer.parseInt(readFromText));
+                } catch (Exception e) {
+                    System.out.println("File not found");
+                    myFarm = new Farm(0);
+                }
                 break;
             case 2:
                 System.out.println("You picked normal mode");
-                myFarm = new Farm(15);
+                try {
+                    Scanner textScanner = new Scanner(new File("normal.txt"));
+                    readFromText = textScanner.next();
+                    myFarm = new Farm(Integer.parseInt(readFromText));
+                } catch (Exception e) {
+                    System.out.println("File not found");
+                    myFarm = new Farm(0);
+                }
                 break;
             case 3:
                 System.out.println("You picked hard mode");
-                myFarm = new Farm(20);
+                try {
+                    Scanner textScanner = new Scanner(new File("hard.txt"));
+                    readFromText = textScanner.next();
+                    myFarm = new Farm(Integer.parseInt(readFromText));
+                } catch (Exception e) {
+                    System.out.println("File not found");
+                    myFarm = new Farm(0);
+                }
                 break;
         }
 

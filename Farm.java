@@ -45,11 +45,41 @@ public class Farm {
      * and proceed to the next day.
      */
     public void goToNextDay () {
+        int i;
+
         this.endGameConditionOne = false;
         this.endGameConditionTwo = false;
         this.endGameConditionThree = false;
 
         this.dayCount++;
+
+        //updates a crop's amount of days left to be harvestable
+        for (i = 0; i < tileList.size(); i++) {
+            if (tileList.get(i).getHasCrop()) {
+                tileList.get(i).getCrop().subtractDaysLeft();
+            }
+        }
+        //updates a crop as withered if it was not harvested on harvest day
+        for (i = 0; i < tileList.size(); i++) {
+            if (tileList.get(i).getHasCrop()) {
+
+                tileList.get(i).getCrop().witherIfNotHarvestedOnHarvestDay();
+            }
+        }
+
+        //withers a crop that does not meet requirements on harvest day
+        for (i = 0; i < tileList.size(); i++) {
+            if (tileList.get(i).getHasCrop()) {
+                tileList.get(i).getCrop().witherIfUnhealthyOnHarvestDay();
+            }
+        }
+
+        //updates a crop to be harvestable right after the day count is updated
+        for (i = 0; i < tileList.size(); i++) {
+            if (tileList.get(i).getHasCrop()) {
+                tileList.get(i).getCrop().checkIfHarvestable();
+            }
+        }
     }
 
     /**
@@ -65,41 +95,51 @@ public class Farm {
 
         //check endGameConditionOne - if there are any active/growing crops
         for (i = 0; i < tileList.size(); i++) {
-            if (tileList.get(i).getHasCrop())
-                counter++;
+            if (tileList.get(i).getHasCrop()) {
+                if (!tileList.get(i).getCrop().getIsWithered())
+                    counter++;
+            }
         }
+        
         if (counter == 0)
             this.endGameConditionOne = true;
+        else 
+            this.endGameConditionOne = false;
         // check endGameConditionThree - if all tiles have withered crops
         if (counter == 50)  {
             for (i = 0; i < tileList.size(); i++) {
-                if (tileList.get(i).getCrop().getIsWithered())
+                if (tileList.get(i).getHasCrop()) {
+                    if (tileList.get(i).getCrop().getIsWithered())
                     witheredCounter++;
+                }
             }
         }
         if (witheredCounter == 50)
             this.endGameConditionThree = true;
+        else
+            this.endGameConditionThree = false;
 
         //check endGameConditionTwo if player does not have enough money to buy a seed
         if (player.getFarmerType().equals("Farmer")) {
-            if (player.getObjectcoins() < 5)
+            if (player.getObjectCoins() < 5)
                 this.endGameConditionTwo = true;
         } else if (player.getFarmerType().equals("Registered Farmer")) {
-            if (player.getObjectcoins() < 4)
+            if (player.getObjectCoins() < 4)
                 this.endGameConditionTwo = true;
         } else if (player.getFarmerType().equals("Distinguished Farmer")) {
-            if (player.getObjectcoins() < 3)
+            if (player.getObjectCoins() < 3)
                 this.endGameConditionTwo = true;
         } else if (player.getFarmerType().equals("Legendary Farmer")) {
-            if (player.getObjectcoins() < 2)
+            if (player.getObjectCoins() < 2)
                 this.endGameConditionTwo = true;
-        }
+        } else
+            this.endGameConditionTwo = false;
 
-        if ((this.endGameConditionOne &&
-            this.endGameConditionTwo) ||
-            this.endGameConditionThree) {
-                res = true;
-            }
+        if (this.endGameConditionOne && this.endGameConditionTwo)
+            res = true;
+        
+        if (this.endGameConditionThree)
+            res = true;
 
         return res;
     }
