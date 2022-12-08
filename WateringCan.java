@@ -18,14 +18,14 @@ public class WateringCan extends Tool {
      * @param tile - the tile object that will be watered
      */
     public boolean useTool (Tile tile) {
-        System.out.println("tile read getHasCrop: " + tile.getHasCrop());
-        if(tile.getIsPlowed() && tile.getHasCrop()) {
+        
+        if(tile.getIsPlowed()) {
+            if (tile.getHasCrop()) {
+                tile.getCrop().addTimesCropWasWatered();
+                System.out.println("You used the watering can.");
+            } else
+                System.out.println("You watered an empty tile");
             
-            tile.getCrop().addTimesCropWasWatered(); //TODO: GETCROP IS NULL
-            System.out.println("You used the watering can.");
-            return true;
-        } else if (tile.getIsPlowed()) {
-            System.out.println("You used the watering crop on an empty tile");
             return true;
         } 
         else if(tile.getIsPlowed() == false){

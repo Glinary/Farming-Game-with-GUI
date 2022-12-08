@@ -42,13 +42,14 @@ public class Controller {
         while (!exitGame) {
 
             while (!endGame) {
-    
+                
                 System.out.println("Enter [1] to pick a tile");
                 System.out.println("Enter [2] to sleep");
                 
                 while (firstActionOption != 1 && firstActionOption != 2)
                     firstActionOption = sc.nextInt();
 
+                //sc.close();
                 if (firstActionOption == 2) {
                     myFarm.getPlayer().checkStatusBeforeNextDay();
                     myFarm.goToNextDay();
@@ -58,11 +59,14 @@ public class Controller {
                     
                 } else {
                     System.out.println("Enter tile #");
+
+                    
                     while (tileOption < 0 || tileOption > 49)
                         tileOption = sc.nextInt();
     
                     System.out.println("You picked tile " + tileOption);
                     currTile = myFarm.getTile(tileOption);
+                    
                     
                     System.out.println("Choose an action"); //plow, plant, water, fertilize, pickaxe, shovel, harvest
                     System.out.println("Enter [0] to plow tile");
@@ -81,7 +85,7 @@ public class Controller {
                             myFarm.getPlayer().plow(currTile);
                             break;
                         case 1:
-                            myFarm.getPlayer().plantSeed(currTile);
+                            myFarm.getPlayer().plantSeed(currTile, myFarm); //TODO: UPDATE UML
                             break;
                         case 2:
                             myFarm.getPlayer().water(currTile);
@@ -99,6 +103,8 @@ public class Controller {
                             myFarm.getPlayer().harvest(currTile);
                             break;
                     }
+
+                    //sc.close();
                 }
 
                 gameMode = -1;
@@ -118,6 +124,8 @@ public class Controller {
 
                 while (endGameOption != 1 && endGameOption != 2) 
                 endGameOption = sc.nextInt();
+
+                //sc.close();
 
                 if (endGameOption == 1) {
                     System.out.println("You chose to play again");
@@ -139,6 +147,7 @@ public class Controller {
                     while (gameMode != 1 && gameMode != 2 && gameMode != 3)
                         gameMode = sc.nextInt();
 
+                    //sc.close();
                     switch(gameMode) {
                         case 1:
                             System.out.println("You picked easy mode");
@@ -162,12 +171,15 @@ public class Controller {
                     myFarm.displayFarmInformation();
                     myFarm.getPlayer().displayPlayerInformation();
 
-                } else
+                } else {
                     System.out.println("Thank you for playing");
+                    exitGame = true;
+                }
+                    
             }
         }
 
-       sc.close(); 
+       //sc.close(); 
 
     }
 }

@@ -41,7 +41,7 @@ public class Crop {
         if(this.isHarvestable == true) {
             if(this.timesCropWasWatered < this.minWaterRequirement && this.timesCropAddedFertilizer < this.minFertilizerRequirement || this.daysLeft < 0) {
                 this.isHarvestable = false;
-                this.isWithered = false;
+                this.isWithered = true;
             }
         }
     }

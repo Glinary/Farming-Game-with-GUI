@@ -1,6 +1,6 @@
 public class Pickaxe extends Tool{
-    private double costFromUsage = 10;
-    private double experienceFromUsage = 4;
+    private double costFromUsage = 50;
+    private double experienceFromUsage = 15;
 
     public Pickaxe () {
 
