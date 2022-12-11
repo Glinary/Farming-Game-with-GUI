@@ -10,6 +10,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 /**
 * This class represents the main GUI view of the farming game.
@@ -97,7 +98,7 @@ public class MainView {
 
         this.optionPanel = new JPanel(new GridLayout(8, 1));
         this.dayCounterLbl = new JLabel("     Day: 1");
-        this.currencyLbl = new JLabel("     ObjectCoins : 100");
+        this.currencyLbl = new JLabel("     ObjectCoins : 100.00");
 
         this.playerStatsBtn = new JButton("View Player Stats");
         this.playerStatsBtn.addActionListener(new ActionListener() {
@@ -145,8 +146,8 @@ public class MainView {
                                 myFarm.getPlayer().harvest(myFarm.getTile(tileIndex));
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Unplowed");
                                 tileBtnList.get(tileIndex).setBackground(Color.orange);
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
-                                setExperience(String.valueOf(myFarm.getPlayer().getExperience()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
+                                setExperience(String.format("%.2f", myFarm.getPlayer().getExperience()));
                             } else {
                                 JOptionPane.showMessageDialog(null, "This crop is not yet harvestable.");
                             }
@@ -213,6 +214,8 @@ public class MainView {
     * This method displays the frame of the tools that can be used for the game
     */
     private void displayToolFrame() {
+
+        DecimalFormat df = new DecimalFormat("0.00");
         this.toolFrame = new JFrame("Choose a Tool");
         this.toolFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.toolFrame.setLocationRelativeTo(null);
@@ -237,8 +240,9 @@ public class MainView {
                             tileBtnList.get(tileIndex).setBackground(Color.green);
                             tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Plowed");
                             myFarm.getPlayer().plow(myFarm.getTile(tileIndex));
-                            setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
-                            setExperience(String.valueOf(myFarm.getPlayer().getExperience()));
+                            
+                            setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
+                            setExperience(String.format("%.2f", myFarm.getPlayer().getExperience()));
                             setLevel(String.valueOf(myFarm.getPlayer().getLevel()));  
                         } else {
                             JOptionPane.showMessageDialog(null, "You cannot plow this tile.");
@@ -270,8 +274,8 @@ public class MainView {
                         if(myFarm.getTile(tileIndex).getIsPlowed() == true) {
                             if(myFarm.getTile(tileIndex).getHasCrop() == true) {
                                 myFarm.getPlayer().water(myFarm.getTile(tileIndex));
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
-                                setExperience(String.valueOf(myFarm.getPlayer().getExperience()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
+                                setExperience(String.format("%.2f", myFarm.getPlayer().getExperience()));
                                 setLevel(String.valueOf(myFarm.getPlayer().getLevel()));
                             } else {
                                 JOptionPane.showMessageDialog(null, "You cannot water an unplanted tile.");
@@ -302,8 +306,8 @@ public class MainView {
                         if(myFarm.getTile(tileIndex).getIsPlowed() == true) {
                             if(myFarm.getTile(tileIndex).getHasCrop() == true) {
                                 myFarm.getPlayer().fertilize(myFarm.getTile(tileIndex));
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
-                                setExperience(String.valueOf(myFarm.getPlayer().getExperience()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
+                                setExperience(String.format("%.2f", myFarm.getPlayer().getExperience()));
                                 setLevel(String.valueOf(myFarm.getPlayer().getLevel()));
                                 checkIfGameOver();
                             } else {
@@ -337,8 +341,8 @@ public class MainView {
                             tileBtnList.get(tileIndex).setBackground(Color.orange);
                             tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Unplowed");
                             myFarm.getPlayer().pickaxe(myFarm.getTile(tileIndex));
-                            setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
-                            setExperience(String.valueOf(myFarm.getPlayer().getExperience()));
+                            setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
+                            setExperience(String.format("%.2f", myFarm.getPlayer().getExperience()));
                             setLevel(String.valueOf(myFarm.getPlayer().getLevel()));
                             checkIfGameOver();
                         } else {
@@ -371,8 +375,8 @@ public class MainView {
                             JOptionPane.showMessageDialog(null, "Nothing happened in this tile.");
                         }
                         myFarm.getPlayer().shovel(myFarm.getTile(tileIndex));
-                        setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
-                        setExperience(String.valueOf(myFarm.getPlayer().getExperience()));
+                        setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
+                        setExperience(String.format("%.2f", myFarm.getPlayer().getExperience()));
                         setLevel(String.valueOf(myFarm.getPlayer().getLevel()));
                         checkIfGameOver();
                     }
@@ -433,7 +437,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 1);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Turnip == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Turnip");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } 
                         } else {
                             JOptionPane.showMessageDialog(null, "You cannot plant in this tile.");
@@ -463,7 +467,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 2);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Carrot == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Carrot");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } 
                         } else {
                             JOptionPane.showMessageDialog(null, "You cannot plant in this tile.");
@@ -493,7 +497,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 3);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Potato == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Potato");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } 
                         } else {
                             JOptionPane.showMessageDialog(null, "You cannot plant in this tile.");
@@ -523,7 +527,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 4);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Rose == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Rose");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } 
                         } else {
                             JOptionPane.showMessageDialog(null, "You cannot plant in this tile.");
@@ -553,7 +557,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 5);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Tulips == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Tulips");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } 
                         } else {
                             JOptionPane.showMessageDialog(null, "You cannot plant in this tile.");
@@ -583,7 +587,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 6);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Sunflower == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Sunflower");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } 
                         } else {
                             JOptionPane.showMessageDialog(null, "You cannot plant in this tile.");
@@ -613,7 +617,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 7);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Mango == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Mango");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } else {
                                 JOptionPane.showMessageDialog(null, "You need more space to plant on this tile.");
                             }
@@ -645,7 +649,7 @@ public class MainView {
                             myFarm.getPlayer().plantSeed(myFarm.getTile(tileIndex), myFarm, 8);
                             if(myFarm.getTile(tileIndex).getCrop() instanceof Apple == true) {
                                 tileBtnList.get(tileIndex).setText((tileIndex + 1) + ": Apple");
-                                setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                                setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                             } else {
                                 JOptionPane.showMessageDialog(null, "You need more space to plant on this tile.");
                             }
@@ -712,10 +716,12 @@ public class MainView {
             if(reply == JOptionPane.YES_OPTION) {
                 if(myFarm.getPlayer().getObjectCoins() >= 200) {
                     myFarm.getPlayer().register(1);
-                    setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                    setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                     setFarmerType("Registered Farmer");
                     setBonusEarn("+1");
                     setSeedReduc("-1");
+                } else {
+                    JOptionPane.showMessageDialog(null, "You do not have enough coins.");
                 }
             }
         }
@@ -724,12 +730,15 @@ public class MainView {
             if(reply == JOptionPane.YES_OPTION) {
                 if(myFarm.getPlayer().getObjectCoins() >= 300) {
                     myFarm.getPlayer().register(1);
-                    setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                    setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                     setFarmerType("Distinguised Farmer");
                     setBonusEarn("+2");
                     setSeedReduc("-2");
                     setBonusWater("+1");
+                } else {
+                    JOptionPane.showMessageDialog(null, "You do not have enough coins.");
                 }
+                
             }
         }
         else if(myFarm.getPlayer().getLevel() >= 15 && myFarm.getPlayer().getFarmerType().equals("Distinguished Farmer")){
@@ -737,13 +746,15 @@ public class MainView {
             if(reply == JOptionPane.YES_OPTION) {
                 if(myFarm.getPlayer().getObjectCoins() >= 300) {
                     myFarm.getPlayer().register(1);
-                    setCurrency(String.valueOf(myFarm.getPlayer().getObjectCoins()));
+                    setCurrency(String.format("%.2f", myFarm.getPlayer().getObjectCoins()));
                     setFarmerType("Legendary Farmer");
                     setBonusEarn("+4");
                     setSeedReduc("-3");
                     setBonusWater("+2");
                     setBonusFert("+1");
                 }
+            } else {
+                JOptionPane.showMessageDialog(null, "You do not have enough coins.");
             }
         }
 
