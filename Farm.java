@@ -98,6 +98,8 @@ public class Farm {
             if (tileList.get(i).getHasCrop()) {
                 if (!tileList.get(i).getCrop().getIsWithered())
                     counter++;
+                else
+                    witheredCounter++;
             }
         }
         
@@ -105,15 +107,8 @@ public class Farm {
             this.endGameConditionOne = true;
         else 
             this.endGameConditionOne = false;
+
         // check endGameConditionThree - if all tiles have withered crops
-        if (counter == 50)  {
-            for (i = 0; i < tileList.size(); i++) {
-                if (tileList.get(i).getHasCrop()) {
-                    if (tileList.get(i).getCrop().getIsWithered())
-                    witheredCounter++;
-                }
-            }
-        }
         if (witheredCounter == 50)
             this.endGameConditionThree = true;
         else
@@ -237,5 +232,14 @@ public class Farm {
         }
 
         return result;
+    }
+
+    /**
+    * This gets the day count inside the farming game
+    *
+    * @return - the number of days spent in the game
+    */
+    public int getDayCount() {
+        return this.dayCount;
     }
 }

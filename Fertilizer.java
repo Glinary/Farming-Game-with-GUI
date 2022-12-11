@@ -44,6 +44,8 @@ public class Fertilizer extends Tool{
 
     /**
      * This returns the experienced to be added from using the fertilizer
+     * 
+     * @return - the experience gained from using the fertilizer
      */
     public double getExperienceFromUsage() {
         return this.experienceFromUsage;

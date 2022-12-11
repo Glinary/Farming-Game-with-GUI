@@ -4,7 +4,7 @@
  */
 public class Plow extends Tool{
     private double costFromUsage = 0;
-    private double experienceFromUsage = 0.5;
+    private double experienceFromUsage = 100.0;
     
     /**
      * This constructor currently does not set any of the plow's attributes to a default value

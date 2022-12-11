@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * This class represents the player object that plays the game. It contains the stats of a player
@@ -36,6 +35,14 @@ public class Player {
      */
     public void increaseObjectCoins (double num) {
         this.objectCoins += num;
+    }
+
+    public double getExperience() {
+        return this.experience;
+    }
+
+    public int getLevel() {
+        return this.level;
     }
 
     /**
@@ -78,18 +85,8 @@ public class Player {
      * This method checks the current stats of the player and if eligible, prompts them to register to 
      * a new class/farmer type provided that they have enough money for the registration fee.
      */
-    public void checkStatusBeforeNextDay () {
-        int input = -1;
-        Scanner sc = new Scanner(System.in);
+    public void register (int input) {
         if (this.level >= 5 && this.farmerType.equals("Farmer")) { //prompt for RegisteredFarmer
-            System.out.println("Congratulations! You have reached the stats needed to become a Registered Farmer");
-            System.out.println("Would you like to register as a Registered Farmer?");
-            System.out.println("Enter [1] to become a Registered Farmer at the cost of 200");
-            System.out.println("Enter [0] to proceed without registering");
-
-            while (input != 1 && input != 0) {
-                input = sc.nextInt();
-            }
 
             if (input == 1) {
                 if (this.objectCoins >= 200) {
@@ -106,14 +103,6 @@ public class Player {
             }
                 
         } else if (this.level >= 10 && this.farmerType.equals("Registered Farmer")) {
-            System.out.println("Congratulations! You have reached the stats needed to become a Distinguished Farmer");
-            System.out.println("Would you like to register as a Distinguished Farmer?");
-            System.out.println("Enter [1] to become a Distinguished Farmer at the cost of 300");
-            System.out.println("Enter [0] to proceed without registering");
-
-            while (input != 1 && input != 0) {
-                input = sc.nextInt();
-            }
 
             if (input == 1) {
                 if (this.objectCoins >= 300) {
@@ -130,14 +119,6 @@ public class Player {
             }
                 
         } else if (this.level >= 15 && this.farmerType.equals("Distinguished Farmer")) {
-            System.out.println("Congratulations! You have reached the stats needed to become a Legendary Farmer");
-            System.out.println("Would you like to register as a Legendary Farmer?");
-            System.out.println("Enter [1] to become a Legendary Farmer at the cost of 400");
-            System.out.println("Enter [0] to proceed without registering");
-
-            while (input != 1 && input != 0) {
-                input = sc.nextInt();
-            }
 
             if (input == 1) {
                 if (this.objectCoins >= 400) {
@@ -155,8 +136,6 @@ public class Player {
                 
             
         }
-
-        //sc.close();
     }
 
     /**
@@ -182,7 +161,7 @@ public class Player {
 
         if (toolList.get(0).useTool(tile)) {
             this.objectCoins -= toolList.get(0).getCostFromUsage();
-            this.experience += toolList.get(0).getExperienceFromUsage();
+            increaseExperience(toolList.get(0).getExperienceFromUsage());
         }
             
     }
@@ -195,7 +174,7 @@ public class Player {
     public void water (Tile tile) {
         if (toolList.get(1).useTool(tile)) {
             this.objectCoins -= toolList.get(1).getCostFromUsage();
-            this.experience += toolList.get(0).getExperienceFromUsage();
+            increaseExperience(toolList.get(1).getExperienceFromUsage());
         }
     }
 
@@ -211,7 +190,7 @@ public class Player {
             System.out.println("You do not have enough coins to use fertilizer");
         else if (toolList.get(2).useTool(tile)) {
             this.objectCoins -= toolList.get(2).getCostFromUsage();
-            this.experience += toolList.get(2).getExperienceFromUsage();
+            increaseExperience(toolList.get(2).getExperienceFromUsage());
         }
     }
 
@@ -226,7 +205,7 @@ public class Player {
             System.out.println("You do not have enough coins to use pickaxe");
         else if (toolList.get(3).useTool(tile)) {
             this.objectCoins -= toolList.get(3).getCostFromUsage();
-            this.experience += toolList.get(3).getExperienceFromUsage();
+            increaseExperience(toolList.get(3).getExperienceFromUsage());
         }
     }
 
@@ -242,7 +221,7 @@ public class Player {
             System.out.println("You do not have enough coins to use shovel");
         else if (toolList.get(4).useTool(tile)){
             this.objectCoins -= toolList.get(4).getCostFromUsage();
-            this.experience += toolList.get(4).getExperienceFromUsage();
+            increaseExperience(toolList.get(4).getExperienceFromUsage());
         }
     }
 
@@ -281,8 +260,10 @@ public class Player {
                 finalHarvestPrice *= 1.1;
 
             System.out.println("You harvested the crop and earned " + finalHarvestPrice + " ObjectCoins.");
-            tile.resetStats();
             increaseObjectCoins(finalHarvestPrice);
+            increaseExperience(tile.getCrop().getExperienceYield());
+            tile.resetStats();
+            
         } else {
             System.out.println("You cannot harvest this crop.");
         }
@@ -293,11 +274,11 @@ public class Player {
      * that the tile is plowed, that the tile does not have rocks, and that the tile has no current crop.
      * 
      * @param tile - the tile to be planted upon
-     * @param farm - the farm containing the tile
+     * @param farm - the farm containing the tile\
+     * @param cropChoice - the index of a crop from the crop list
      */
-    public void plantSeed (Tile tile, Farm farm) {
+    public void plantSeed (Tile tile, Farm farm, int cropChoice) {
         boolean proceed = true;
-        Scanner sc = new Scanner(System.in);
 
         if (tile.getHasRock())
             System.out.println("There's a rock!");
@@ -313,13 +294,8 @@ public class Player {
             System.out.println("[7] Mango: " + (100 - this.seedCostReduction) + " ObjectCoins");
             System.out.println("[8] Apple: " + (200 - this.seedCostReduction) + " ObjectCoins");
 
-            
-            int input = sc.nextInt();
-            while (input < 1 || input > 8) 
-                sc.nextInt();
-
             double totalCost = 0;
-            switch(input) {
+            switch(cropChoice) {
                 case 1: 
                     if (this.objectCoins < (5 - this.seedCostReduction)) {
                         System.out.println("You do not have enough money to plant turnip");
@@ -386,7 +362,7 @@ public class Player {
 
             if (proceed) {
                 spendObjectCoins(totalCost);
-                tile.createCrop(input);
+                tile.createCrop(cropChoice);
                 tile.setHasCrop(true);
                 System.out.println("You have successfully planted on the tile");
             } else
@@ -396,7 +372,6 @@ public class Player {
             System.out.println("You could not plant a seed on this tile");
         }
         
-        //sc.close();
     }
 
     /**
@@ -419,9 +394,34 @@ public class Player {
 
     /**
      * This method returns the current class/farmer type of the player
-     * @return
+     * @return - the current class/farmer type of the player
      */
     public String getFarmerType () {
         return this.farmerType;
     }
+
+    /**
+    * This method gets the amount that will be reduced from the cost of buying a seed
+    * @return - the amount to be reduced from total cost of seed
+    */
+    public double getSeedCostReduction() {
+        return this.seedCostReduction;
+    }
+
+    /**
+    * This method gets bonus amount of water increases
+    * @return - the bonus amount of increased water
+    */
+    public int getWaterBonusIncrease() {
+        return this.waterBonusLimitIncrease;
+    }
+
+    /**
+    * This method gets the bonus amount of increased fertilizer
+    @return - the bonus amount of increased fertilizer
+    */
+    public int getFertilizerBonusIncrease() {
+        return this.fertilizerBonusLimitIncrease;
+    }
+
 }

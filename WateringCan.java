@@ -29,10 +29,11 @@ public class WateringCan extends Tool {
             if (tile.getHasCrop()) {
                 tile.getCrop().addTimesCropWasWatered();
                 System.out.println("You used the watering can.");
-            } else
+                return true;
+            } else {
                 System.out.println("You watered an empty tile");
-            
-            return true;
+                return false;
+            }
         } 
         else if(tile.getIsPlowed() == false){
             System.out.println("The tile is not plowed.");
